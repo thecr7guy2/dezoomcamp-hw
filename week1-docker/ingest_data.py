@@ -44,14 +44,14 @@ if __name__=="__main__":
     file_name = download_file(url)
     df,ldf= read_file_and_get_schema(file_name)
     print(ldf)
-    # pre_df = preprocess_data(df)
-    # engine = create_engine("postgresql://postgres:postgres@localhost:5432/taxi_data")
-    # table_name = "YellowTrips_Jan2020"
-    # rows_inserted,timetaken = create_schema_insert_data(pre_df,table_name,engine)
-    # if rows_inserted is None:
-    #     print("There was an error in the query.")
-    # else:
-    #     print(f"{rows_inserted} rows were successfully inserted in {timetaken}")
+    pre_df = preprocess_data(df)
+    engine = create_engine("postgresql://postgres:postgres@localhost:5432/taxi_data")
+    table_name = "YellowTrips_Jan2020"
+    rows_inserted,timetaken = create_schema_insert_data(pre_df,table_name,engine)
+    if rows_inserted is None:
+        print("There was an error in the query.")
+    else:
+        print(f"{rows_inserted} rows were successfully inserted in {timetaken}")
         
-    #     #640008 rows were successfully inserted in 0:20:03.509146
+        #640008 rows were successfully inserted in 0:20:03.509146
 
