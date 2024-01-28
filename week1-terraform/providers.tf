@@ -8,7 +8,6 @@ terraform {
 }
 
 provider "google" {
-  credentials = "./keys/dezoomcamp-experiment-d1a7e8818501.json"
-  project     = "dezoomcamp-experiment"
-  region      = "us-central1"
+  project = "learningde"
+  region  = "us-central1"
 }

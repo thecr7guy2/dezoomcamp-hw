@@ -40,13 +40,14 @@ def create_schema_insert_data(df,table_name,engine):
 
 
 if __name__=="__main__":
-    url = "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2019-09.parquet"
+    url = "https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv"
     file_name = download_file(url)
     df,ldf= read_file_and_get_schema(file_name)
     print(ldf)
-    pre_df = preprocess_data(df)
+    # pre_df = preprocess_data(df)
+    pre_df = df
     engine = create_engine("postgresql://postgres:postgres@localhost:5432/taxi_data")
-    table_name = "YellowTrips_Jan2020"
+    table_name = "zone_lookup"
     rows_inserted,timetaken = create_schema_insert_data(pre_df,table_name,engine)
     if rows_inserted is None:
         print("There was an error in the query.")

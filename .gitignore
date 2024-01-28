@@ -197,3 +197,9 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+<<<<<<< HEAD
+
+*.json
+
+=======
+>>>>>>> a61d0e896d10f3bd39e11653374cbc7d3acd2531
