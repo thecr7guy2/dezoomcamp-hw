@@ -197,9 +197,15 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
-<<<<<<< HEAD
 
 *.json
 
-=======
->>>>>>> a61d0e896d10f3bd39e11653374cbc7d3acd2531
+/week2-mage/mage-ai.db
+/week2-mage/mage_data/
+/week2-mage/secrets/
+/week2-mage/postgres_data/
+/week2-mage/docker-envs/*.env
+
+/week2-mage/*.parquet
+
+

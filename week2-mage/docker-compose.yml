@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  database:
+    image: postgres:14
+    volumes:
+      - "./postgres_data:/var/lib/postgresql/data:rw"
+      - ./docker-envs/docker-entrypoint-initdb.d/init-database.sh:/docker-entrypoint-initdb.d/init-database.sh
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - 5432:5432
+    profiles: ["db"]
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    profiles: ["db"]
+
+  
+  magic:
+    image: mageai/mageai:latest
+    env_file:
+      - ./docker-envs/mage.env
+      - ./docker-envs/sai.env
+    command: mage start ${PROJECT_NAME}
+    volumes:
+      - .:/home/src/
+    restart: on-failure:5
+    ports:
+      - 6789:6789
+    profiles: ["mage"]
+ 
+    
+  
