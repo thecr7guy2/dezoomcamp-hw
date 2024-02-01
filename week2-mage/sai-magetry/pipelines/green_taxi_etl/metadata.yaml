@@ -1,38 +1,48 @@
 blocks:
 - all_upstream_blocks_executed: true
   color: null
-  configuration:
-    data_provider: postgres
-    data_provider_profile: default
-    dbt: {}
-    disable_query_preprocessing: false
-    export_write_policy: append
-    limit: 1000
-    use_raw_sql: true
-  downstream_blocks: []
+  configuration: {}
+  downstream_blocks:
+  - green_transform
   executor_config: null
   executor_type: local_python
   has_callback: false
-  language: sql
-  name: test_postgres
+  language: python
+  name: get_data_api
   retry_config: null
   status: executed
   timeout: null
   type: data_loader
   upstream_blocks: []
-  uuid: test_postgres
+  uuid: get_data_api
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: green_transform
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - get_data_api
+  uuid: green_transform
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
 conditionals: []
-created_at: '2024-01-31 14:58:00.705913+00:00'
+created_at: '2024-01-31 22:54:38.398824+00:00'
 data_integration: null
 description: null
 executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: test_delete_later
+name: green_taxi_etl
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}
@@ -42,7 +52,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-01-31T15:01:20+00:00'
-uuid: test_delete_later
+updated_at: '2024-02-01 00:37:29'
+uuid: green_taxi_etl
 variables_dir: /home/src/mage_data/sai-magetry
 widgets: []
