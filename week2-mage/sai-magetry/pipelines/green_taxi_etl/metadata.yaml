@@ -18,7 +18,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - put_data_postgres
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -31,6 +32,22 @@ blocks:
   upstream_blocks:
   - get_data_api
   uuid: green_transform
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: put_data_postgres
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - green_transform
+  uuid: put_data_postgres
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
@@ -52,7 +69,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-02-01 00:37:29'
+updated_at: '2024-02-02 01:01:04'
 uuid: green_taxi_etl
 variables_dir: /home/src/mage_data/sai-magetry
 widgets: []

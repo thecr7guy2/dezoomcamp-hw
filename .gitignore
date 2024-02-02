@@ -197,7 +197,7 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-**/*.js
+**/*.json
 **/*.parquet
 
 /week2-mage/mage-ai.db

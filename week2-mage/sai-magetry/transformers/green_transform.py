@@ -36,17 +36,25 @@ def transform(data, *args, **kwargs):
     Returns:
         Anything (e.g. data frame, dictionary, array, int, str, etc.)
     """
+    null_values = data.isnull().sum()
+    print(null_values)
     data = data[(data['passenger_count'] > 0) & (data['trip_distance'] > 0)]
-    data['lpep_pickup_datetime'] = pd.to_datetime(data['lpep_pickup_datetime'], unit='ms')
-    data['lpep_pickup_date'] = data['lpep_pickup_datetime'].apply(lambda x: x.date())
-    
+  
+    data['lpep_pickup_date'] = data['lpep_pickup_datetime'].dt.date
+
     newcolumns = []
+    count =0
     for column in list(data):
         if is_camel_case(column):
             newcolumns.append(camel_to_snake(column))
+            count = count + 1
         else:
             newcolumns.append(column)
     data.columns = newcolumns
+
+    print(data["vendor_id"].value_counts())
+    print(count)
+    print(data['ehail_fee'].dtype)
 
     return data
 

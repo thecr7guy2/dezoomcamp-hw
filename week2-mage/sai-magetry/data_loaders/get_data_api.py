@@ -30,6 +30,7 @@ def load_data_from_api(*args, **kwargs):
     base_url = "https://d37ci6vzurychx.cloudfront.net/trip-data/green_tripdata_2020-{}.parquet"
     months = [10,11,12]
     con_df = magichahaha(base_url,months)
+    
 
     return con_df
 
