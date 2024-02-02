@@ -20,6 +20,7 @@ blocks:
   configuration: {}
   downstream_blocks:
   - put_data_postgres
+  - put_data_gcs
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -42,12 +43,62 @@ blocks:
   language: python
   name: put_data_postgres
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:
   - green_transform
   uuid: put_data_postgres
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - get_data_gcs
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: put_data_gcs
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - green_transform
+  uuid: put_data_gcs
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - put_big_query
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: get_data_gcs
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks:
+  - put_data_gcs
+  uuid: get_data_gcs
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: put_big_query
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - get_data_gcs
+  uuid: put_big_query
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
@@ -69,7 +120,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-02-02 01:01:04'
+updated_at: '2024-02-02 13:39:08'
 uuid: green_taxi_etl
 variables_dir: /home/src/mage_data/sai-magetry
 widgets: []

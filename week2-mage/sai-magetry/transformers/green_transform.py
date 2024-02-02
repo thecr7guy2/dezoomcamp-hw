@@ -54,7 +54,9 @@ def transform(data, *args, **kwargs):
 
     print(data["vendor_id"].value_counts())
     print(count)
-    print(data['ehail_fee'].dtype)
+    
+
+    data= data.drop('ehail_fee', axis=1)
 
     return data
 

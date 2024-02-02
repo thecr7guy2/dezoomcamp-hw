@@ -15,10 +15,7 @@ def export_data_to_postgres(df: DataFrame, **kwargs) -> None:
     Specify your configuration settings in 'io_config.yaml'.
 
     Docs: https://docs.mage.ai/design/data-loading#postgresql
-    """
-    null_values = df.isnull().sum()
-    print(null_values)
-    new_df= df.drop('ehail_fee', axis=1)
+    """    
 
     schema_name = 'mage'  # Specify the name of the schema to export data to
     table_name = 'green_taxi'  # Specify the name of the table to export data to
