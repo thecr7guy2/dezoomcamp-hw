@@ -9,6 +9,7 @@ sqlalchemy = "*"
 requests = "*"
 pyarrow = "*"
 psycopg2-binary = "*"
+google-cloud-storage = "*"
 
 [dev-packages]
 
