@@ -20,7 +20,7 @@ Data Warehouse is a OLAP solution. It stores structured data from multiple sourc
 
 ##### How a Data warehouse is different from Data lake
 
-Datalake unlike a Datawarehouse can store different files. It is a repository that is designed mainly to store files in there native format. To insert data, there is no predefined schema that is required. They are mainly used in scnarios where you the data and the questions being asked in the data are eveolving. 
+Datalake unlike a Datawarehouse can store different files. It is a repository that is designed mainly to store files in there native format. To insert data, there is no predefined schema that is required. They are mainly used in scnarios where you the data and the questions being asked in the data are evolving. 
 
 ##### Examples 
 
@@ -49,7 +49,7 @@ BigQuery enhances query performance and optimizes costs by caching the results o
 
 Disable Caching Temporarily: Add a directive to your query to bypass the cache, ensuring you're always querying fresh data.
 
-##### Partioning in BigQuery
+##### Partitioning in BigQuery
 Partitioning in BigQuery is a technique used to divide a table into smaller segments, called partitions, based on a specific column, such as a date or timestamp. This approach is highly effective for managing large datasets by reducing the amount of data scanned during queries, which in turn optimizes query performance and cost. Partitioning is particularly beneficial for time-series data, where queries often target specific time ranges. By partitioning a table on a date or timestamp column, BigQuery can limit the data it needs to scan to just the partitions that fall within the query's specified time range. This not only speeds up query execution but also significantly lowers costs by avoiding full table scans. Partitioning is most effective when you have a clear partitioning column that aligns with your query patterns, ensuring that your queries can take full advantage of the partitioned structure to optimize performance.
 
 ##### Clustering in BigQuery

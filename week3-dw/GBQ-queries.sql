@@ -36,4 +36,4 @@ WHERE DATE(lpep_pickup_datetime) BETWEEN '2022-06-01' AND '2022-06-30';
 
 -- Scanning ~ 0 MB of DATA
 SELECT COUNT(*) FROM `learningde.ny_taxi_data.green_tripdata_non_partitoned`;
--- The Reason for this is because the number of rows is already in the metadata and Bigquery uses that to display the result instead 
+-- The Reason for this is because the number of rows is already in the metadata and Bigquery uses that to display the result instead
