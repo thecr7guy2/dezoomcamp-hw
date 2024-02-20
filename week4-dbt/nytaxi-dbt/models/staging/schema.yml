@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: staging
+    database: learningde 
+    schema: ny_taxi_data
+
+    tables:
+      - name: green_tripdata_partitoned_clustered
+      - name: green_taxi
