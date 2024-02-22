@@ -3,8 +3,9 @@ version: 2
 sources:
   - name: staging
     database: learningde 
-    schema: ny_taxi_data
+    schema: taxi_trips_hw
 
     tables:
-      - name: green_tripdata_partitoned_clustered
-      - name: green_taxi
+      - name: green_trips_non_partitioned
+      - name: yellow_trips_non_partitioned
+      - name: fhv_trips_non_partitoned
