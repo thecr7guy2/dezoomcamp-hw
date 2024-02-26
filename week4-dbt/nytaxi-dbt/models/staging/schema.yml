@@ -8,4 +8,4 @@ sources:
     tables:
       - name: green_trips_non_partitioned
       - name: yellow_trips_non_partitioned
-      - name: fhv_trips_non_partitoned
+      - name: fhv_trips_2019

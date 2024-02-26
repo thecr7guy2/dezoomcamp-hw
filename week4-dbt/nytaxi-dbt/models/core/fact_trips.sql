@@ -43,10 +43,6 @@ on trips_unioned.pickup_locationid = pickup_j.locationid
 inner join dim_zones as dropoff_j
 on trips_unioned.dropoff_locationid = dropoff_j.locationid
 
-{% if var('is_test_run', default= True) %}
 
-  limit 100
-
-{% endif %}
 
 

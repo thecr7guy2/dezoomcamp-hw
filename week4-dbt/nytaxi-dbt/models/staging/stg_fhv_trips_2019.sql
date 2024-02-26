@@ -18,7 +18,7 @@ select
     {{ dbt.safe_cast("PUlocationID", api.Column.translate_type("integer")) }} as pickup_locationid,
     {{ dbt.safe_cast("DOlocationID", api.Column.translate_type("integer")) }} as dropoff_locationid
 
-from {{ source('staging', 'fhv_trips_non_partitoned') }}
+from {{ source('staging', 'fhv_trips_2019') }}
 
 )
 
