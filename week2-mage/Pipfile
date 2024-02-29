@@ -10,6 +10,7 @@ requests = "*"
 pyarrow = "*"
 psycopg2-binary = "*"
 google-cloud-storage = "*"
+duckdb = "*"
 
 [dev-packages]
 
